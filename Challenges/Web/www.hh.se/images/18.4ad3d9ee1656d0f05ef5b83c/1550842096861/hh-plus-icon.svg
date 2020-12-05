@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#22BBEA;}
+	.st1{fill:#FFFFFF;}
+</style>
+<title>Icon Plus</title>
+<desc>Created with Sketch.</desc>
+<g id="Desktop">
+	<g id="Page:-Personal" transform="translate(-820.000000, -947.000000)">
+		<g id="Group-2" transform="translate(200.000000, 784.000000)">
+			<g id="Icon-Plus" transform="translate(620.000000, 163.000000)">
+				<g id="Shapes_x2F_Circle">
+					<g id="Mask">
+						<circle id="path-1_1_" class="st0" cx="20" cy="20" r="20"/>
+					</g>
+				</g>
+				<g id="Icon_x2F_Plus_x2F_White" transform="translate(11.666667, 11.666667)">
+					<path id="Plus-Icon" class="st1" d="M9.2,7.5h5.9v1.7l-5.9,0l0,5.9H7.5l0-5.9l-5.9,0l0-1.7h5.9V1.6h1.7L9.2,7.5z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

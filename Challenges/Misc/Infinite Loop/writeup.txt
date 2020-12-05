@@ -1,0 +1,10 @@
+***Description***
+∞ ∞ ∞
+
+***Solution***
+It's a loop where each zip file's password is the name of the next zip file (without the .zip extension). Create a script to extract them automatically until the "flag.zip" file is extracted. It's then protected with another password that you can crack with "fcrackzip":
+"fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u flag.zip"
+And there is the flag.
+(upload "exploit.py)
+
+hhctf_flag{aafaf061e6bb2afdcbe8e123deb5080c}

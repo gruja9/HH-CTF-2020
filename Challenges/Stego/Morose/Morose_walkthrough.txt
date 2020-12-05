@@ -1,0 +1,30 @@
+A png file is supplied.
+
+Using tools like 'file' or 'exiftool' shows nothing strange.
+
+The file has been embeded with a zip file.
+
+To detect if a file has other files within and extract them, a tool such as 'binwalk' or 'foremost' can be used.
+
+Ex:
+binwalk -e Password_Retrieval.png
+foremost Password_Retrieval.png
+
+Since this is a png file, you could even unzip this file with the 'unzip' tool.
+
+A zip file will have been extracted. It's contents is a secret message.
+
+The text is Morse code, you can tell by the slashes(/) signifying spaces 
+However the dashes (-) are replaced by 1's, and the dots (.) replaced by 0's.
+
+You can manually replace the dots and dashes, or you can make it easy by using 'sed'.
+
+sed 's/1/-/g; s/0/\./g' secret_message.txt
+
+This sed command replaced all 1's with dashes(-), and 0's with dots(.). 
+
+From here, a online tool can be used to translate the morse code into text. 
+
+Done!
+
+Flag: hhctf_flag{17910427}

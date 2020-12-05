@@ -1,0 +1,15 @@
+***Description***
+(The challenge is borrowed from CTF 2019.)
+Mission: Your mission should you choose to accept it:
+1. Find the name of the document that was accessed.                                                                  
+2. Find the name of the program that was executed.
+
+
+***Solution***
+1. Mount the NTUSER.DAT registry file with "chntpw -e NTUSER.DAT" and navigate to "Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs" and run "type 1" to read from the value named "1" and you will get the first part of the flag:
+"flag{s3cr3ts_1n
+
+2. Now navigate to "Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist" and you will see numerous keys. Trying each one and going in "Count" should reveal that the "{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}" key has a lot of values in there. The last value is actually a file with the "cneg2- _e3t15gel_15_p0zz0a}" filename, which seems to be reserved. Running it with ROT13 reveals the second part of the flag:
+"_r3g15try_15_c0mm0n}"
+
+flag{s3cr3ts_1n_r3g15try_15_c0mm0n}

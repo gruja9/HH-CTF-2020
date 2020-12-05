@@ -1,0 +1,47 @@
+The file is a JPEG file of me hacking a bank. 
+
+This image contains another file. 
+
+To extract the file, a tool such as steghide can be used.
+
+However, a password is required to extract this data.
+
+A tool like stegocracker can be used to run a wordlist against the image file.
+
+Ex:
+stegocracker me_hacking_bank.jpg /wordlists/rockyou.txt
+
+The program will run through the 'rokyou.txt' wordlist until it finds a password that is able to
+extract data from the image. 
+
+Once it has found the password, steghide can be used to extract the data:
+
+steghide extract -sf me_hacking_bank.jpg
+Password: hacker
+
+A file will be extracted; secret_message.txt > hex_decoded.txt
+
+cat'ing this file shows a long string of alphanumeric characters.
+
+The string has been converted to hexadecimal, to convert the hexadecimal to ascii a tool
+such as 'xxd' can be used.
+
+Ex: 
+cat secret_message.txt | xxd -r -p 
+
+Now the string has been converted from hexadecimal, but it is still not fully decoded.
+
+The string is now encoded in base64, the way you can tell is usually by the padding at the end
+("=="), and by the alphanumeric characters.
+
+To decode this you can simply use the base64 tool with the '-d'(decode) flag
+
+Ex:
+cat hex_decoded.txt | base64 -d > output
+
+Of course this could have been done in one line:
+cat secret_message.txt | xxd -r -p | base64 -d
+
+The flag has now been decoded!
+
+Flag: hhctf_flag{s3cr3t_f1l3s}

@@ -1,0 +1,11 @@
+***Description***
+(The challenge is borrowed from CTF 2019.)
+Save me, king, my code is saying something is out of index. This is making my head hurt.
+
+
+***Solution***
+The file obviously has a broken header that we need to repair in order to view the image. Open it with a hexeditor ("hexeditor save_us") and edit the first 5 bytes to:
+"FF D8 FF E0 00"
+Open the image now with "xdg-open save_us" and you will find the flag there.
+
+flag{kung3n_är_4rg}

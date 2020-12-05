@@ -1,0 +1,7 @@
+***Description***
+What can cause this file to exist?
+
+***Solution***
+Open the file 102520-50250-01.dmp with WinDbg Preview (File > Start Debugging > Open dump file)
+Run the command !analyze -v
+The flag is the name of the process that caused the BSOD: hhctf_flag{NotMyFault64} (PROCESS_NAME:  hhctf_flag{NotMyFault64}.exe)

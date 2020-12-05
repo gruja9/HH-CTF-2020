@@ -1,0 +1,10 @@
+***Description***
+This time the flag doesn't begin with "hhctf_flag", but...
+
+***Solution***
+You can see that a different ciphertext is returned every time (almost) you connect to the service. Trying the same known-plaintext attack won't work here because the flag is not in the familiar format.
+However, if you script it to connect to the service multiple times like the following one liner:
+"for i in {1..1000}; do nc -v ctfeh.hh.se 10010 | grep -v flag; done >> flag.txt"
+You can clearly see that the same ciphertexts are repeated multiple times, but one is repeated a suspicious number of times, which means that the same key was used every time to generate it. You could now make your own script or use the online service https://www.dcode.fr/xor-cipher to bruteforce the ciphertext. Simply input the ciphertext in the main field, select "Bruteforce/Test all keys from 1 to 8 bits (single byte)" and run. You will find a flag amongst the attempts on the left. Wrap it up in the "hhctf_flag{}" format and submit it.
+
+hhctf_flag{X0r_rUL35_0Nc3_@gAIn}

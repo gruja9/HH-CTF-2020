@@ -1,0 +1,12 @@
+***Description***
+Decrypt the flag. Can it get easier than that?
+
+***Solution***
+It's obviously the RSA encryption algorithm, so if you are not familiar with its terminology, components and processes, please read more on it. You have everything you need in these two Wikipedia websites:
+https://sv.wikipedia.org/wiki/RSA
+https://simple.wikipedia.org/wiki/RSA_algorithm
+
+You are given n1 and n2, which are two numbers that both have prime2 in common. Since prime1 and prime3 are also, obviously, prime numbers, you can get the greatest common divisor of n1 and n2 and that would be prime2. It's then trivial to get prime1, you just divide n1 by prime2. Phi is then calculated by multiplying (prime1-1) with (prime2-1) and the extended Euclidean algorithm is then used to calculate the modular multiplicative inverse of the private key "e", which you already have to be 65537 from the source code. That inverse is then actually the decryption key, which we use to decrypt the message with pow(c, d, n1). Before that, c needs to be converted back from hex to int and after the decryption process from int back to bytes stream, which would be the plaintext. And there is the flag.
+(upload exploit.py)
+
+hhctf_flag{3d5454216654359d5b40a27a40316867}

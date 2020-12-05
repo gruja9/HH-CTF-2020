@@ -1,0 +1,13 @@
+***Description***
+(The challenge is borrowed from CTF 2019.)
+I stole one of the CTF maker's memory right under his nose! He thinks he is such a 1337 hacker when he's using the command line. Let's see if we can find any flags within this memory dump.
+
+
+***Solution***
+From the description, we understand that we need to analyze the dump file looking for cmd lines or history. For that, we can use Volatility, so follow these steps:
+1. Clone the Volatility GitHub repository (https://github.com/volatilityfoundation/volatility)
+2. Run the tool and get some basic information about the dump - "./vol.py imageinfo -f StolenMemory.raw"
+3. The suggested profile is "Win7SP1x64" so let's use the "cmdscan" module with that profile - "./vol.py cmdscan -f StolenMemory.raw --profile=Win7SP1x64"
+4. The flag is Base64-encoded so simply decode it - "echo ZmxhZ3swcmQzcl8wZl92MGw0dDFsMTd5fQ== | base64 -d"
+
+flag{0rd3r_0f_v0l4t1l17y}

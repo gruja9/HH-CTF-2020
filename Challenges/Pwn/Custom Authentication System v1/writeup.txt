@@ -1,0 +1,8 @@
+***Description***
+A developer at the beginning of his brilliant carrier has created a custom authentication system in C. Try to bypass it.
+
+***Solution***
+The program uses an unsafe function called "gets()" to read in a string from a user and saves it on stack. Since the function doesn't check whether the buffer has enough space for the entire input string, the stack can be overflowed. Having in mind that the "authenticated" integer variable was created before the "password" buffer, meaning that it was put on stack first and then the buffer, the input string can overflow into the "authenticated" variable and overwrite it with any value. The IF statement in the program only checks whether the "authenticated" variable is different than zero, any value will suffice. Simply input 261 A's, which would overwrite the "authenticated" variable with an A and the flag will be displayed.
+The portion of the code that checks for the correct password is just a rabbit hole and the flag that it displays is invalid.
+
+hhctf_flag{96240ef5192a36f2d7aa72863facdbec}

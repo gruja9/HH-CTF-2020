@@ -1,0 +1,7 @@
+***Description***
+Give it some time, it will finish eventually.
+
+***Solution***
+This challenge requires more reverse engineering skills in order to decipher what is going on. Essentially, the program is trying to calculate the 275034687th prime number and print it as the flag. Knowing this, you can navigate to a website (https://primes.utm.edu/nthprime/index.php#nth) and request it, which appears to be 5898490069. Wrap it in the required flag format and submit it.
+
+hhctf_flag{5898490069}

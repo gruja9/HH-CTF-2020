@@ -1,0 +1,4 @@
+This text THE has been FLAG rotated a IS bunch of ROotationS times! 
+Wklv whaw WKH kdv ehhq QWLR czelepo l VF ohapu bs LIinuncihM ncgym!
+[----------rot3-------][----rot11----][---rot13--][-----rot20-----]
+flag: hhctf_flag{R0otationS}

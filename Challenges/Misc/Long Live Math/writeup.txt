@@ -1,0 +1,10 @@
+***Description***
+Hopefully you're good at math, and fast too.
+
+***Solution***
+Pretty easy challenge. You're only required to create a Python script that would do the math calculations and send them back to the service and get the flag.
+You can find the final Python script below.
+
+(Upload "exploit.py" script)
+
+hhctf_flag{9fe3421cbae8ceea66bb43bdf6d5e690}

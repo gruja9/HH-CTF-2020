@@ -1,0 +1,5 @@
+Good job! 
+robots.txt is a standard page used by websites to communicate with web crawlers and web robots which areas of the website should not be processed or scanned. Feel free to read up on it more! :) 
+
+
+hhctf_flag{robotsisimportant}

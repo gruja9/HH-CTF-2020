@@ -1,0 +1,9 @@
+***Description***
+Give yourself a grade you have always desired.
+
+***Solution***
+The binary is susceptible to the format string vulnerability, which can be easily confirmed by inputting "%x.%x.%x.%x." in the binary and some addresses off the stack will be displayed. We need to take advantage of this vulnerability and overwrite the grade variable (at the memory address provided by the program) to number 5 (even though it can be any number, but the binary requires it to be number 5 in order to print out the flag). When we type "AAAA%x.%x.%x.%x.%x.%x.%x.%x." into the program, we can see that in the seventh place the address 41414141 is located, which is our A's from the beginning of the buffer. We can use this information now to provide any memory address we want to overwrite (which would be 0xffffd0b8, note that it can be different for you) and add one additional byte (any character) in order for it to be total 5 bytes (memory addresses are 4 bytes in size). Now use the "%7$n" (7 because it's in the seventh place) format string to write the number of bytes written (5) to the variable, which would then become 5:
+
+"python -c 'print "\x28\xd6\xff\xffA%7$n"' | nc -v ctfeh.hh.se 10006"
+
+hhctf_flag{fe2191cea0eb2bfc9ddb8fd72ee1d7d3}

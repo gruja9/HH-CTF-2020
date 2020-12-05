@@ -1,0 +1,7 @@
+***Description***
+Well, it seems that strings are easy to find. I should be safe now.
+
+***Solution***
+The flag is not in the string format anymore and can't be detected with "strings". However, it has been converted to ASCII numbers and can be easily detected by any reverse engineering software, such as Radare2. To find the flag, open the binary with "r2 ./binary", analyze the binary with "aaa", seek to main with "s main" and type "pdf" to disassemble the function, which will convert all the ASCII numbers into their text counterparts and reveal the flag.
+
+hhctf_flag{3005ab05f3f5ed6c78dd3cdb698cd199}

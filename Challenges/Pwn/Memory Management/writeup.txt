@@ -1,0 +1,9 @@
+***Description***
+Basic knowledge of C programs' memory representation is required.
+
+
+***Solution***
+The article on the following link contains the answers to almost all of the questions: https://www.geeksforgeeks.org/memory-layout-of-c-program/
+Some other questions may require additional Googling.
+
+hhctf_flag{cd6a0b2003c2ab7f8d8c021ae83abd06}

@@ -1,0 +1,8 @@
+***Description***
+XOR Rules Indeed!
+
+***Solution***
+The fundamental property of XOR encryption is that after you create the ciphertext by XOR-ing the plaintext and the keystream, you decode the ciphertext by XOR-ing it with the key stream back. However, we don't know the key, but if we knew a portion of the plaintext, we could XOR that known plaintext part with the cipher and extract the repeating key stream. This technique is known as Known-Plaintext Attack.
+In this case, we have the ciphertext "305831553e6f344d395729423a0967473a066b146c0361476b546b153b016747390863106a0931196a55655c", which is the XOR-encrypted flag and since we know that the plaintext flag begins with "hhctf_flag{", we can simply XOR that known-plantext part with the ciphertext to extract the key. For that you can use https://www.dcode.fr/xor-cipher, and in the main form you input the XOR-encrypted ciphertext and in the ASCII key field you input the known-plaintext part. Run the algorithm and you will get the repeating keystream, so the key is "X0R!" Now simply use the key instead of the known plaintext and there is the flag.
+
+hhctf_flag{cb95fb695433f3d94c15fa81129c82e7}

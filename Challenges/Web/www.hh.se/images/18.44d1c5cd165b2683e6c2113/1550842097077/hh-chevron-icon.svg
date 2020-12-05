@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Chevron Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Form/Dropdown/Normal" transform="translate(-258.000000, -19.000000)" fill="#004985">
+            <path d="M269,26 L263,32 L261,30 L267,24 L261,18 L263,16 L271,24 L269,26 Z" id="Chevron-Icon" transform="translate(266.000000, 24.000000) rotate(-270.000000) translate(-266.000000, -24.000000) "></path>
+        </g>
+    </g>
+</svg>

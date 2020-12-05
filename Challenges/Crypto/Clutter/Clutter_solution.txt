@@ -1,0 +1,35 @@
+The challenge is several different encrypted zip files. The file within the zip file is the pasword for the first zip files.
+
+Ex:
+File1
+-----File2
+----------File3
+---------------FIle4
+
+Where the password for File1, is File2. The password for File2 is File3 and so on.
+
+However the password(the name of th file) is hashed by multilitple different cryptographic functions.
+
+The first file (123456789.zip) has a file within that is a long string of numbers and
+letters. You can see this by using the unzip command with the -l(list) flag: unzip -l
+123456789.zip
+
+The first filename is hased with sha384.
+The second filename is hashed with sha256.
+The third filename is hashed with sha512.
+The fourth filename is hashed with md5.
+The fifth filename is hashed with sha1.
+
+These hashes can be broken by simply pasting them into an online hash lookup tool such as:
+https://md5decrypt.net/en/
+or
+https://hashes.com/en/decrypt/hash
+
+A more advanced meathod to completely ignore the actual challenge would be to use a tool like
+JohnTheRipper or fcrackzip to break the password for the zip file. 
+
+Example of how it could be done with John and a wordlist: 
+zip2john 123456789.zip > Output_file
+john --wordlist=/path/to/wordlist Output_file
+
+

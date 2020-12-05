@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/To Top Circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="32" cy="32" r="32"></circle>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" transform="translate(-1563.000000, -199.000000)">
+            <g id="Icon/To-Top-Circle" transform="translate(1563.000000, 199.000000)">
+                <g id="Shapes/Circle" opacity="0.5">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <g id="Colors/Tertiary-Blue" mask="url(#mask-2)" fill="#22BBEA" fill-rule="evenodd">
+                        <rect id="Color" x="0" y="0" width="64" height="64"></rect>
+                    </g>
+                </g>
+                <path d="M12.497524,38.3384028 C12.0184445,38.6131777 11.4073247,38.4475562 11.1325498,37.9684766 C10.8577749,37.4893971 11.0233965,36.8782773 11.502476,36.6035024 L31.502476,25.1325498 C31.8106162,24.9558167 32.1893838,24.9558167 32.497524,25.1325498 L52.497524,36.6035024 C52.9766035,36.8782773 53.1422251,37.4893971 52.8674502,37.9684766 C52.5926753,38.4475562 51.9815555,38.6131777 51.502476,38.3384028 L32,27.1528039 L12.497524,38.3384028 Z" id="Stroke-1" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

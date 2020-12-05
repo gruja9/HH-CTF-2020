@@ -1,0 +1,13 @@
+Super easy challenge.
+
+You get PNG file.
+
+running the 'file' tool on the file reveals that it is not a PNG file, but a JPEG.
+
+Seeing as this does not correspond, it is worth looking at the metadata of the image.
+
+Using a tool such as 'exiftool' on the image to show the exif-data
+
+The flag is stored in the comment of the exif-data
+
+Flag: hhctf_flag{M3t4d4t4}

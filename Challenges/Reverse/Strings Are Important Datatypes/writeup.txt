@@ -1,0 +1,7 @@
+***Description***
+Try to guess the flag!
+
+***Solution***
+Run "strings" tool on the binary and at the beginning of the output you will see the flag divided in a few rows. Put the flag parts back together and there it is.
+
+hhctf_flag{946306221a7a9741cb06a8849cbc54df}

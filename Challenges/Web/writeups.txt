@@ -1,0 +1,57 @@
+***Secret HTML***
+Description:
+The web server is located at http://ctfeh.hh.se:10030/ and has a flag hidden somewhere on the server. Try to find it!
+NOTE: No automation tools or brute-forcing is required to find the flags, so don't use them! The manual approach is everything you need.
+The web server contains multiple flags, so if it doesn't work, it may be a flag for another web challenge.
+
+Solution:
+Open "Inspect Element" on the page and you will find the flag hidden in the "<head>" tag.
+hhctf_flag{wowpagesourceiscool}
+
+
+***Beep Boop***
+Description:
+The web server is located at http://ctfeh.hh.se:10030/ and has a flag hidden somewhere on the server. Try to find it!
+NOTE: No automation tools or brute-forcing is required to find the flags, so don't use them! The manual approach is everything you need.
+The web server contains multiple flags, so if it doesn't work, it may be a flag for another web challenge.
+
+Solution:
+Navigate to "robots.txt" and you will find the flag.
+hhctf_flag{robotsisimportant}
+
+
+***Admin 2 l33t*** (Borrowed from CTF 2019)
+Description:
+The vulnerable web page is located at http://ctfeh.hh.se:10030/chall3.php. Become admin and get the flag.
+NOTE: No automation tools or brute-forcing is required to solve the challenge, so don't use them! The manual approach is all you need!
+
+Solution:
+If you intercept the request with Burp Suite, you will see there is a cookie with name "admin" set to "0". Simply set it to 1 and re-send the request and you will get the flag.
+hhctf_flag{fe79007c6ceed591a27cc1d5a0075f87}
+
+
+***JS***
+Description:
+The web server is located at http://ctfeh.hh.se:10030/ and has a flag hidden somewhere on the server. Try to find it!
+NOTE: No automation tools or brute-forcing is required to find the flags, so don't use them! The manual approach is everything you need.
+The web server contains multiple flags, so if it doesn't work, it may be a flag for another web challenge.
+
+Solution:
+Looking at the source code of the index page again, you will find some suspicious "<script>" tags near the end of the "<head>" tag section.
+They seem to be Base64-encoded, so simply decode them one by one and you will get the flag.
+hhctf_flag{javascript files are an important part of all webpages and deserve closer investigation}
+
+
+
+***NomNom***
+Description:
+The vulnerale webpage is located at http://ctfeh.hh.se:10030/chall4/ and requires you to bypass the login page and get the flag.
+NOTE: No automation tools or brute-forcing is required to find the flags, so don't use them! The manual approach is everything you need.
+
+Solution:
+Cookie “admin” is set to 0. Set it to 1.
+Cookie “?” is the Base64-encoded password for admin and decodes to “insecure”.
+login: admin
+password: insecure
+When everything is set, the flag will appear.
+hhctf_flag{remembertocheckcookies}

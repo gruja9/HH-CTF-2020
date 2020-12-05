@@ -1,0 +1,20 @@
+***Description***
+Is the flag really secure?
+
+***Solution***
+Open traffic.pcapng in Wireshark
+Right click on packet No. 43 ,FTP-DATA, download of SecretFiles.zip
+Choose Follow > TCP stream
+in "Show and save data as" select Raw
+Save as SecretFiles.zip
+
+Extract the password hash with zip2john (zip2john SecretFiles.zip > SecretFiles.hash)
+Crack it with john (john --wordlist=rockuoy.txt SecretFiles.hash) 
+(password is: !!n0t.@n0th3r.d@mn.p@$$w0rd!! at line 14343253)
+unzip SecretFiles.zip 
+*enter password*
+unzip folder.zip
+search for: _flag in the extracted folder, named folder (find folder -type d -name _flag)
+List the files in the _flag folder, reverse by last modified date (ls -tr folder/folder08/folder14/folder25/hhctf/_flag)
+flag is: hhctf_flag{238156fd904cab}
+----

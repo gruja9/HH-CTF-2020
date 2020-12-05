@@ -1,0 +1,12 @@
+***Description***
+The developer has fixed the security issue from the previous version, but has introduced another one in a totally different memory segment. Try to find it and read the flag.
+NOTE: The password for the program is the flag from the previous challenge (Stack Overflow Authentication Bypass).
+
+***Solution***
+The binary asks for the password first, which is the flag from the previous challenge. Once that is correct, it then asks for user input and unsafely stores it on heap in the "grade" variable where only 2 bytes are allocated. Since heap goes from low memory addresses to higher, the user input can freely overflow into the following memory allocated for the "ladok_file" variable where a file to read from is written. Afterwards, the "ladok_file" variable is used to open a file and read its contents, so the user input can be manipulated to overwrite that memory and specify an arbitrary file to read. It's obvious from the previous challenge that the flag will be stored in the "flag.txt" file, so that's what we want to read. However, even though there are only 2 bytes allocated for the "grade" variable, the compiler actually allocates the whole 16 bytes of memory, which can be confirmed with a debugger, so we need to write first some 16 bytes and then the file to read from, as following:
+
+"AAAAAAAAAAAAAAAAflag.txt"
+
+The binary then opens the "flag.txt" file and displays the flag!
+
+hhctf_flag{168d5dcc30ea5ef1cffb70392a68a58a}

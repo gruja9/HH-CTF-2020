@@ -1,0 +1,12 @@
+***Description***
+(The challenge is borrowed from CTF 2019)
+The unethical hacking group has attacked us again, we dont know if it was Tolga, Balin or Masool that was behind this attack! We need your help again, we belive the attacker attached a USB device in purpose of stealing our documents, he possibly launched some program on our system as well.
+
+Mission: Your mission should you choose to accept it:
+1. Find the name of the USB that was attached.
+
+
+***Solution***
+On Linux, the SOFTWARE hive can be easily mounted and edited with the "chntpw" tool. Simply run "chntpw -e SOFTWARE" and you can navigate the hive and read and edit values. The attached USB devices are commonly stored under "Microsoft\Windows Portable Devices\Devices" and there you will find a key for the specific USB device (with a very long name). Go into the key and read the value "FriendlyName" and you will find the flag.
+
+flag{h3r3'5_j0hnny}

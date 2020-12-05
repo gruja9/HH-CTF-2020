@@ -1,0 +1,14 @@
+***Description***
+Welcome to Halmstad University! Can you exploit it on the first day?
+
+
+***Solution***
+It's a Simple Python script which takes input, base64-decodes it and then unpickles it. Unpickling user input is unsafe, as arbitrary pickle objects can be injected leading to remote code execution. A good article about this can be found here: https://checkoway.net/musings/pickle/
+Use the canonical Python pickle shellcode from the article or run the following Python code that will generate a pickle shellcode (exploit.py script).
+It will generate the following Base64-encrypted pickle shellcode and provide it as input to the script:
+
+"Y3N1YnByb2Nlc3MKUG9wZW4KcDAKKChTJy9iaW4vc2gnCnAxCnRwMgp0cDMKUnA0Ci4="
+
+It will execute /bin/sh and give us a shell, so now open "flag.txt" to get the flag
+
+hhctf_flag{8cbc15cb9cb1117e91841bfeaa893db7}
